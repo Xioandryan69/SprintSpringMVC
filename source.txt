@@ -1,0 +1,91 @@
+===== STRUCTURE =====
+.
+├── copie.sh
+├── documentation
+│   └── docs.md
+├── pom.xml
+├── README.md
+├── source.txt
+└── src
+    └── main
+        ├── java
+        │   └── com
+        │       └── company
+        │           └── app
+        │               ├── config
+        │               ├── constant
+        │               ├── controller
+        │               ├── dto
+        │               ├── exeption
+        │               ├── model
+        │               ├── repository
+        │               └── service
+        ├── resources
+        │   └── application.properties
+        └── webapp
+            ├── static
+            │   ├── css
+            │   ├── img
+            │   └── js
+            └── WEB-INF
+                ├── spring-servlet.xml
+                ├── views
+                └── web.xml
+
+24 directories, 8 files
+
+===== FILES =====
+
+########################################
+# FILE : ./documentation/docs.md
+########################################
+
+########################################
+# FILE : ./copie.sh
+########################################
+(
+echo "===== STRUCTURE ====="
+tree
+
+echo
+echo "===== FILES ====="
+
+find . -type f \
+! -path "./target/*" \
+! -path "./.git/*" \
+| while read file
+do
+    echo
+    echo "########################################"
+    echo "# FILE : $file"
+    echo "########################################"
+    cat "$file"
+done
+) > source.txt
+########################################
+# FILE : ./src/main/webapp/WEB-INF/spring-servlet.xml
+########################################
+
+########################################
+# FILE : ./src/main/webapp/WEB-INF/web.xml
+########################################
+
+########################################
+# FILE : ./src/main/resources/application.properties
+########################################
+
+########################################
+# FILE : ./source.txt
+########################################
+
+########################################
+# FILE : ./pom.xml
+########################################
+
+########################################
+# FILE : ./README.md
+########################################
+# SprintSpringMVC
+Mr Aina &amp; Mr Rindra
+
++ [ ] initilise git 
