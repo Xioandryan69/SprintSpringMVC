@@ -15,7 +15,9 @@ OUTPUT="source.txt"
 
     find . -type f \
     ! -path "./.git/*" \
+    ! -path "./.documentation/*" \
     ! -path "./target/*" \
+    ! -name "*.class" \
     ! -name "*.class" \
     | sort \
     | while read file
