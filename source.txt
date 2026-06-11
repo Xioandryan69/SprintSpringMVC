@@ -1,5 +1,5 @@
 PROJECT EXPORT
-Generated: jeu. 11 juin 2026 20:13:13 EAT
+Generated: jeu. 11 juin 2026 20:16:52 EAT
 
 
 =================================================
@@ -9,22 +9,24 @@ FILE : src/main/java/com/company/app/controller/HomeController.java
      2	
      3	import org.springframework.stereotype.Controller;
      4	import org.springframework.web.bind.annotation.GetMapping;
-     5	
-     6	@Controller
-     7	public class HomeController
-     8	{
-     9	    @GetMapping("/ping")
-    10	    public String ping()
-    11	    {
-    12	        return "SPRING OK";
-    13	    }
-    14	
-    15	    @GetMapping("/")
-    16	    public String home()
-    17	    {
-    18	        return "home";
-    19	    }
-    20	}
+     5	import org.springframework.web.bind.annotation.ResponseBody;
+     6	
+     7	@Controller
+     8	public class HomeController
+     9	{
+    10	    @ResponseBody
+    11	    @GetMapping("/ping")
+    12	    public String ping()
+    13	    {
+    14	        return "SPRING OK";
+    15	    }
+    16	
+    17	    @GetMapping("/")
+    18	    public String home()
+    19	    {
+    20	        return "home";
+    21	    }
+    22	}
 
 
 =================================================
