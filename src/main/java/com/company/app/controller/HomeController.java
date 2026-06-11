@@ -5,18 +5,20 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
-public class HomeController
-{
+public class HomeController {
     @ResponseBody
     @GetMapping("/ping")
-    public String ping()
-    {
+    public String ping() {
         return "SPRING OK";
     }
 
     @GetMapping("/")
-    public String home()
-    {
+    public String home() {
         return "home";
+    }
+
+    @GetMapping("/test")
+    public String testPage() {
+        return "methods";
     }
 }

@@ -1,2 +1,5 @@
-/home/andrianandrainy/Documents/S4/Mr Aina & Mr Rindra/SprintSpringMVC/src/main/java/com/company/app/controller/StartupCheck.java
+/home/andrianandrainy/Documents/S4/Mr Aina & Mr Rindra/SprintSpringMVC/src/main/java/com/company/app/model/RequestRecord.java
+/home/andrianandrainy/Documents/S4/Mr Aina & Mr Rindra/SprintSpringMVC/src/main/java/com/company/app/service/RequestLogStore.java
+/home/andrianandrainy/Documents/S4/Mr Aina & Mr Rindra/SprintSpringMVC/src/main/java/com/company/app/controller/RequestLogController.java
 /home/andrianandrainy/Documents/S4/Mr Aina & Mr Rindra/SprintSpringMVC/src/main/java/com/company/app/controller/HomeController.java
+/home/andrianandrainy/Documents/S4/Mr Aina & Mr Rindra/SprintSpringMVC/src/main/java/com/company/app/filter/RequestLoggingFilter.java

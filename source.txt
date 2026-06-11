@@ -1,6 +1,91 @@
 PROJECT EXPORT
-Generated: jeu. 11 juin 2026 20:16:52 EAT
+Generated: jeu. 11 juin 2026 20:43:48 EAT
+=================================================
+PROJECT CONFIGURATION
+=================================================
 
+=================================================
+FILE : pom.xml
+=================================================
+     1	<project xmlns="http://maven.apache.org/POM/4.0.0"
+     2	    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     3	    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+     4	
+     5	    <modelVersion>4.0.0</modelVersion>
+     6	
+     7	    <groupId>com.company</groupId>
+     8	    <artifactId>SprintSpringMVC</artifactId>
+     9	    <version>1.0-SNAPSHOT</version>
+    10	
+    11	    <packaging>war</packaging>
+    12	
+    13	    <properties>
+    14	        <maven.compiler.source>21</maven.compiler.source>
+    15	        <maven.compiler.target>21</maven.compiler.target>
+    16	
+    17	
+    18	        <spring.version>6.1.14</spring.version>
+    19	    </properties>
+    20	
+    21	    <dependencies>
+    22	        <!-- Spring MVC -->
+    23	        <dependency>
+    24	            <groupId>org.springframework</groupId>
+    25	            <artifactId>spring-webmvc</artifactId>
+    26	            <version>${spring.version}</version>
+    27	        </dependency>
+    28	
+    29	        <!-- Jakarta Servlet (Tomcat 10) -->
+    30	        <dependency>
+    31	            <groupId>jakarta.servlet</groupId>
+    32	            <artifactId>jakarta.servlet-api</artifactId>
+    33	            <version>6.0.0</version>
+    34	            <scope>provided</scope>
+    35	        </dependency>
+    36	
+    37	        <!-- JSP -->
+    38	        <dependency>
+    39	            <groupId>jakarta.servlet.jsp</groupId>
+    40	            <artifactId>jakarta.servlet.jsp-api</artifactId>
+    41	            <version>3.1.1</version>
+    42	            <scope>provided</scope>
+    43	        </dependency>
+    44	
+    45	        <!-- JSTL -->
+    46	        <dependency>
+    47	            <groupId>jakarta.servlet.jsp.jstl</groupId>
+    48	            <artifactId>jakarta.servlet.jsp.jstl-api</artifactId>
+    49	            <version>3.0.0</version>
+    50	        </dependency>
+    51	
+    52	    </dependencies>
+    53	
+    54	    <build>
+    55	        <finalName>SprintSpringMVC</finalName>
+    56	
+    57	        <plugins>
+    58	
+    59	            <!-- Compilation Java -->
+    60	            <plugin>
+    61	                <groupId>org.apache.maven.plugins</groupId>
+    62	                <artifactId>maven-compiler-plugin</artifactId>
+    63	                <version>3.11.0</version>
+    64	                <configuration>
+    65	                    <release>17</release>
+    66	                </configuration>
+    67	            </plugin>
+    68	
+    69	            <!-- WAR packaging -->
+    70	            <plugin>
+    71	                <groupId>org.apache.maven.plugins</groupId>
+    72	                <artifactId>maven-war-plugin</artifactId>
+    73	                <version>3.4.0</version>
+    74	            </plugin>
+    75	
+    76	        </plugins>
+    77	    </build>
+    78	
+    79	</project>
 
 =================================================
 FILE : src/main/java/com/company/app/controller/HomeController.java
@@ -28,30 +113,9 @@ FILE : src/main/java/com/company/app/controller/HomeController.java
     21	    }
     22	}
 
-
-=================================================
-FILE : src/main/java/com/company/app/controller/StartupCheck.java
-=================================================
-     1	package com.company.app.controller;
-     2	
-     3	import org.springframework.stereotype.Component;
-     4	
-     5	import jakarta.annotation.PostConstruct;
-     6	
-     7	@Component
-     8	public class StartupCheck {
-     9	
-    10	    @PostConstruct
-    11	    public void init() {
-    12	        System.out.println(" SPRING IS STARTING CORRECTLY");
-    13	    }
-    14	}
-
-
 =================================================
 FILE : src/main/resources/application.properties
 =================================================
-
 
 =================================================
 FILE : src/main/webapp/WEB-INF/spring-servlet.xml
@@ -88,7 +152,6 @@ FILE : src/main/webapp/WEB-INF/spring-servlet.xml
     30	
     31	</beans>
 
-
 =================================================
 FILE : src/main/webapp/WEB-INF/views/home.jsp
 =================================================
@@ -105,49 +168,41 @@ FILE : src/main/webapp/WEB-INF/views/home.jsp
     11	</body>
     12	</html>
 
-
 =================================================
 FILE : src/main/webapp/WEB-INF/web.xml
 =================================================
      1	<?xml version="1.0" encoding="UTF-8"?>
-     2	
-     3	<web-app
-     4	        xmlns="http://xmlns.jcp.org/xml/ns/javaee"
-     5	        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-     6	        xsi:schemaLocation="
-     7	        http://xmlns.jcp.org/xml/ns/javaee
-     8	        http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
-     9	        version="4.0">
+     2	<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+     3	         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     4	         xsi:schemaLocation="
+     5	         http://xmlns.jcp.org/xml/ns/javaee
+     6	         http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
+     7	         version="4.0">
+     8	
+     9	    <display-name>SprintSpringMVC</display-name>
     10	
-    11	    <!-- <display-name>SprintSpringMVC</display-name> -->
-    12	        <display-name>DEBUG</display-name>
-    13	
-    14	    <listener>
-    15	        <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
-    16	    </listener>
-    17	
-    18	
-    19	    <servlet>
-    20	        <servlet-name>spring</servlet-name>
-    21	
-    22	
-    23	
-    24	        <servlet-class>
-    25	            org.springframework.web.servlet.DispatcherServlet
-    26	        </servlet-class>
-    27	
-    28	    <init-param>
-    29	        <param-name>contextConfigLocation</param-name>
-    30	        <param-value>/WEB-INF/spring-servlet.xml</param-value>
-    31	    </init-param>
-    32	
-    33	        <load-on-startup>1</load-on-startup>
-    34	    </servlet>
-    35	
-    36	    <servlet-mapping>
-    37	        <servlet-name>spring</servlet-name>
-    38	        <url-pattern>/</url-pattern>
-    39	    </servlet-mapping>
-    40	
-    41	</web-app>
+    11	    <!-- ROOT SPRING CONTEXT -->
+    12	    <listener>
+    13	        <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+    14	    </listener>
+    15	
+    16	    <!-- DISPATCHER SERVLET -->
+    17	    <servlet>
+    18	        <servlet-name>spring</servlet-name>
+    19	        <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+    20	
+    21	        <init-param>
+    22	            <param-name>contextConfigLocation</param-name>
+    23	            <param-value>/WEB-INF/spring-servlet.xml</param-value>
+    24	        </init-param>
+    25	
+    26	        <load-on-startup>1</load-on-startup>
+    27	    </servlet>
+    28	
+    29	    <servlet-mapping>
+    30	        <servlet-name>spring</servlet-name>
+    31	        <url-pattern>/</url-pattern>
+    32	    </servlet-mapping>
+    33	
+    34	</web-app>
 
