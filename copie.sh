@@ -2,31 +2,23 @@
 
 OUTPUT="source.txt"
 
+rm -rf $OUTPUT
+#!/bin/bash
+
+
 {
     echo "PROJECT EXPORT"
     echo "Generated: $(date)"
     echo
 
-    echo "===== STRUCTURE ====="
-    tree
-
-    echo
-    echo "===== FILE CONTENT ====="
-
-    find . -type f \
-    ! -path "./.git/*" \
-    ! -path "./.documentation/*" \
-    ! -path "./target/*" \
-    ! -name "*.class" \
-    ! -name "*.class" \
-    | sort \
-    | while read file
+    find src/main -type f | sort | while read file
     do
         echo
         echo "================================================="
         echo "FILE : $file"
         echo "================================================="
         nl -ba "$file"
+        echo
     done
 
 } > "$OUTPUT"
